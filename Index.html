@@ -1,1 +1,38 @@
-﻿test
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iBot</title>
+    <link rel="stylesheet" href="/liff.css">
+</head>
+<body>
+    <div>
+        <div id="h"></div>
+    </div>
+
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script src="/liff.js"></script>
+    <script>
+        function initializeLiff(myLiffId) {
+            liff
+                .init({
+                    liffId: myLiffId
+                })
+                .then(() => {
+                    initializeApp();
+                })
+                .catch((err) => {
+                    alert('啟動失敗。');
+                });
+        }
+
+        function initializeApp() {
+            var h = document.getElementById('result');
+            h.innerHTML = 'Hello!!';
+        }
+
+        //使用 LIFF_ID 初始化 LIFF 應用
+        initializeLiff('2006056433-K4mg84ga');
+    </script>
+</body>
+</html>
